@@ -1,0 +1,19 @@
+{
+    "name": "miniframework/miniframework",
+    "description": "miniframework",
+    "require": {
+        "php": ">= 7.0"
+    },
+    "authors": [
+        {
+            "name": "Welton Carvalho",
+            "email": "welton@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/",
+            "MF\\": "vendor/MF/"
+        }
+    }
+}
