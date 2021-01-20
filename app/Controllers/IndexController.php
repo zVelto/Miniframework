@@ -8,12 +8,12 @@
 
         public function index() {
             $this->view->dados = array('sofá', 'cadeira', 'cama');
-            $this->render("index");
+            $this->render("index", 'layout1');
         }
 
         public function sobreNos() {
             $this->view->dados = array('notebook', 'smartphone');
-            $this->render("SobreNos");
+            $this->render("SobreNos", 'layout1');
         }
         
     }

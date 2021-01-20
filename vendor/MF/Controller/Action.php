@@ -10,7 +10,17 @@
             $this->view = new \stdClass();
         }
 
-        protected function render($view) {
+        protected function render($view, $layout) {
+            $this->view->page = $view;
+
+            if(file_exists("../app/Views/".$layout.".phtml")) {
+                require_once "../app/Views/".$layout.".phtml";
+            } else {
+                $this->content();
+            }   
+        }
+
+        protected function content() {
 
             $classAtual = get_class($this);
 
@@ -18,7 +28,8 @@
 
             $classAtual = strtolower(str_replace('Controller', '', $classAtual));
 
-            require_once "../app/Views/index/".$view.".phtml";
+            require_once "../app/Views/index/".$this->view->page.".phtml";
+
         }
     }
 
